@@ -4,7 +4,7 @@
             <b-tabs position="is-left" class="block">
                 <b-tab-item label="Pictures">
                     <b-field label="Simple">
-                        <b-slider v-model="value"></b-slider>
+                        <b-slider v-model="volume"></b-slider>
                     </b-field>        
                 </b-tab-item>
                 <b-tab-item label="Music">
@@ -39,7 +39,6 @@ export default {
         return {
             data, 
             selected: data[1],
-            value: 5,
             columns: [
                 {
                     field: 'id',
@@ -69,6 +68,18 @@ export default {
     },
    mounted: function() {
         Snackbar.open('Look at me!')    
+  },
+  computed: {
+      volume: {
+          get: function() {
+              window.console.log('get volume', this.$store.state.volume)
+              return this.$store.state.volume
+          },
+          set: function(nv) {
+              this.$store.commit('updateVolume', nv, this.$store.state.volume)
+              window.console.log('set volume')
+          }
+      }
   }
 }
 
