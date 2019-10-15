@@ -66,21 +66,16 @@ export default {
             ]
         }
     },
-   mounted: function() {
-        Snackbar.open('Look at me!')    
-  },
-  computed: {
-      volume: {
-          get: function() {
-              window.console.log('get volume', this.$store.state.volume)
-              return this.$store.state.volume
-          },
-          set: function(nv) {
-              this.$store.commit('updateVolume', nv, this.$store.state.volume)
-              window.console.log('set volume')
-          }
-      }
-  }
+    computed: {
+        volume: {
+            get: function() {
+                return this.$store.state.volume
+            },
+            set: function(nv) {
+                this.$store.commit('updateVolume', nv, this.$store.state.volume)
+            }
+        }
+    }
 }
 
 </script>

@@ -22,7 +22,6 @@ const store = new Vuex.Store({
   },
   mutations: {
     updateVolume(state, nv) {
-      window.console.log('store updateVolume', nv)
       state.volume = nv
     }
   }

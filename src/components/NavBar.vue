@@ -16,7 +16,7 @@
                 Go to Bar
             </b-navbar-item>
             <b-navbar-dropdown label="Info">
-                <b-navbar-item href="#">
+                <b-navbar-item tag="router-link" :to="{name: 'Zoo'}">
                     About
                 </b-navbar-item>
                 <b-navbar-item tag="router-link" :to="{name: 'Fizz'}">
