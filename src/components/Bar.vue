@@ -24,7 +24,6 @@
 
 <script>
 
-import { SnackbarProgrammatic as Snackbar } from 'buefy'
 
 export default {    
     data() {
