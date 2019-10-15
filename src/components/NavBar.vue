@@ -1,5 +1,5 @@
 <template>
-    <b-navbar shadow="true">
+    <b-navbar :shadow="true">
         <template slot="brand">
             <b-navbar-item tag="router-link" :to="{ path: '/' }">
                 <img
@@ -19,7 +19,7 @@
                 <b-navbar-item href="#">
                     About
                 </b-navbar-item>
-                <b-navbar-item href="#">
+                <b-navbar-item tag="router-link" :to="{name: 'Fizz'}">
                     Contact
                 </b-navbar-item>
             </b-navbar-dropdown>
