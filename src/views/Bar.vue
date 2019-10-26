@@ -5,6 +5,7 @@
                 <b-tab-item label="Pictures">
                     <b-field label="Simple">
                         <b-slider v-model="volume"></b-slider>
+                        <b-button @click="clickMe">Click Me</b-button>
                     </b-field>        
                 </b-tab-item>
                 <b-tab-item label="Music">
@@ -24,6 +25,7 @@
 
 <script>
 
+import ModalForm from '../components/ModalForm.vue'
 
 export default {    
     data() {
@@ -73,6 +75,17 @@ export default {
             set: function(nv) {
                 this.$store.commit('updateVolume', nv, this.$store.state.volume)
             }
+        }
+    },
+
+    methods: {
+        clickMe() {
+            this.$buefy.modal.open({
+                    parent: this,
+                    component: ModalForm,
+                    hasModalCard: true,
+                    customClass: 'custom-class custom-class-2'
+                })
         }
     }
 }
